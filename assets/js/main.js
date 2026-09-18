@@ -208,4 +208,62 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Registration form steps
+   */
+  const registrationForm = document.querySelector('#registration-form');
+  if (registrationForm) {
+    const formSteps = [...registrationForm.querySelectorAll('.form-step')];
+    const progressSteps = [...document.querySelectorAll('.progress-step')];
+    let currentFormStep = 1;
+
+    function showFormStep(stepNumber) {
+      currentFormStep = stepNumber;
+      formSteps.forEach((step) => {
+        step.hidden = Number(step.dataset.step) !== currentFormStep;
+      });
+      progressSteps.forEach((item) => {
+        const number = Number(item.dataset.progress);
+        item.classList.toggle('active', number === currentFormStep);
+        item.classList.toggle('complete', number < currentFormStep);
+      });
+      document.querySelector('#registration').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function updateRegistrationSummary() {
+      const formData = new FormData(registrationForm);
+      const selectedEvents = formData.getAll('events').join(', ');
+      document.querySelector('#registration-summary').innerHTML = `
+        <p><strong>Name:</strong> ${formData.get('fullName')}</p>
+        <p><strong>Email:</strong> ${formData.get('email')}</p>
+        <p><strong>College:</strong> ${formData.get('college')}</p>
+        <p><strong>Events:</strong> ${selectedEvents}</p>
+        <p><strong>Dietary preference:</strong> ${formData.get('dietary')}</p>`;
+    }
+
+    registrationForm.querySelectorAll('[data-next]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const visibleFields = [...formSteps[currentFormStep - 1].querySelectorAll('input, select')];
+        const invalidField = visibleFields.find((field) => !field.checkValidity());
+        if (invalidField) {
+          invalidField.reportValidity();
+          return;
+        }
+        if (currentFormStep === 2) updateRegistrationSummary();
+        showFormStep(currentFormStep + 1);
+      });
+    });
+
+    registrationForm.querySelectorAll('[data-prev]').forEach((button) => {
+      button.addEventListener('click', () => showFormStep(currentFormStep - 1));
+    });
+
+    registrationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      formSteps.forEach((step) => { step.hidden = true; });
+      document.querySelector('[data-success]').hidden = false;
+      progressSteps.forEach((item) => item.classList.add('complete'));
+    });
+  }
+
 })();

@@ -1,0 +1,218 @@
+.registration-page {
+  min-height: 100vh;
+  background: url('../img/illustration/hero-bg.png') center/cover fixed;
+  position: relative;
+}
+
+.registration-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.registration-page > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.registration-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.registration-intro {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.registration-intro .subtitle {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.registration-intro h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin: 10px 0 15px;
+}
+
+.registration-intro p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+.registration-card {
+  background: color-mix(in srgb, var(--surface-color), black 12%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+  padding: clamp(24px, 5vw, 50px);
+}
+
+.registration-progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.progress-step {
+  color: color-mix(in srgb, var(--default-color), transparent 45%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 82%);
+}
+
+.progress-step.active,
+.progress-step.complete {
+  color: var(--heading-color);
+  border-color: var(--accent-color);
+}
+
+.progress-step span {
+  display: block;
+  color: var(--accent-color);
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+
+.form-step[hidden] {
+  display: none;
+}
+
+.form-step h2 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.form-step > p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 28px;
+}
+
+.registration-card label {
+  color: var(--heading-color);
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.registration-card .form-control,
+.registration-card .form-select {
+  background: color-mix(in srgb, var(--background-color), white 4%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 78%);
+  border-radius: 10px;
+  color: var(--default-color);
+  min-height: 50px;
+  padding: 12px 15px;
+}
+
+.registration-card .form-control:focus,
+.registration-card .form-select:focus {
+  background: var(--background-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 75%);
+  color: var(--default-color);
+}
+
+.registration-card .form-select option {
+  background: var(--background-color);
+}
+
+.event-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  height: 100%;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.event-choice:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.event-choice input {
+  accent-color: var(--accent-color);
+  margin-top: 4px;
+}
+
+.event-choice strong {
+  color: var(--heading-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.event-choice small {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.form-actions .btn {
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 12px 25px;
+}
+
+.registration-summary {
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  border-radius: 12px;
+  margin-top: 22px;
+  padding: 18px;
+}
+
+.registration-summary p {
+  margin: 0 0 8px;
+}
+
+.registration-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.registration-success {
+  text-align: center;
+  padding: 25px 0 10px;
+}
+
+.registration-success i {
+  color: #35d07f;
+  font-size: 3.5rem;
+}
+
+@media (max-width: 576px) {
+  .registration-shell {
+    padding: 55px 0;
+  }
+
+  .registration-progress {
+    gap: 6px;
+  }
+
+  .progress-step {
+    font-size: 0.7rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
