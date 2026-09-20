@@ -4,263 +4,541 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Exordium 5.0</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Grab your ticket — Exordium 5.0</title>
+  <meta name="description"
+    content="Grab your tickets for Exordium 5.0 — The flagship tech fest by IEEE SB GEC Barton Hill.">
 
   <!-- Favicons -->
   <link href="assets/img/illustration/exordiumLogo.png" rel="icon">
   <link href="assets/img/illustration/exordiumLogo.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Sora & IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=2.0" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Robot Mascot & Floating Contact CSS -->
+  <link href="assets/css/robot.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Clarity
-  * Template URL: https://bootstrapmade.com/clarity-bootstrap-agency-template/
-  * Updated: Sep 13 2025 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Registration Page CSS -->
+  <link href="assets/css/register.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="register-body">
 
-  
-   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <div class="register-container">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/about/hero-logo-white.png" alt="">
-        
+    <!-- Header & Navigation -->
+    <header class="register-header">
+      <a href="index.html" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back to Exordium 5.0
       </a>
+      <h1 class="register-title">Grab your ticket</h1>
+      <p class="register-subtitle">Reserve your pass for Exordium 5.0 in two simple steps.</p>
+    </header>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#events">Events</a></li>
-          <!-- <li><a href="#schedule">Schedule</a></li> -->
-          <li><a href="index.html#gallery">Gallery</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a href="#contact">Contact</a></li> -->
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <!-- Step Progress Indicator -->
+    <nav class="progress-stepper" aria-label="Registration Progress">
+      <div id="step-indicator-1" class="step-indicator active">
+        <span class="step-num">1</span>
+        <span>Your details</span>
+      </div>
+      <div id="step-indicator-2" class="step-indicator">
+        <span class="step-num">2</span>
+        <span>Payment</span>
+      </div>
+    </nav>
 
-      <a class="btn-getstarted" href="#registration">Register Now</a>
+    <!-- Main Registration Form -->
+    <form id="registration-form" novalidate onsubmit="return false;">
 
-    </div>
-  </header>
+      <!-- STEP 1: Your Details Card -->
+      <section id="step-1-card" class="form-card" aria-labelledby="step-1-title">
+        <h2 id="step-1-title" class="card-title">1. Your Details</h2>
+        <p class="card-desc">Enter your contact and college details below.</p>
 
-  <main>
-    <section id="registration" class="registration-page section">
-      <div class="container">
-        <div class="registration-shell">
-          <div class="registration-intro" data-aos="fade-up">
-            <span class="subtitle">Exordium 5.0</span>
-            <h1>Join the experience</h1>
-            <p>Complete your registration in a few simple steps.</p>
+        <!-- 1. Full Name -->
+        <div class="form-group">
+          <label for="input-name" class="form-label">
+            Full name <span class="required-mark">*</span>
+          </label>
+          <input type="text" id="input-name" name="name" class="form-control" placeholder="e.g. Aditi Sharma" required
+            autocomplete="name">
+          <p class="form-error">Please enter your full name.</p>
+        </div>
+
+        <!-- 2. Phone Number -->
+        <div class="form-group">
+          <label for="input-phone" class="form-label">
+            Phone number <span class="required-mark">*</span>
+          </label>
+          <input type="tel" id="input-phone" name="phone" class="form-control"
+            placeholder="10-digit mobile number (starts with 6-9)" pattern="[6-9][0-9]{9}" inputmode="numeric"
+            maxlength="10" required autocomplete="tel">
+          <p class="form-hint">Must be 10 digits starting with 6, 7, 8 or 9.</p>
+          <p class="form-error">Please enter a valid 10-digit Indian phone number.</p>
+        </div>
+
+        <!-- 3. Email ID -->
+        <div class="form-group">
+          <label for="input-email" class="form-label">
+            Email ID <span class="required-mark">*</span>
+          </label>
+          <input type="email" id="input-email" name="email" class="form-control" placeholder="e.g. aditi@example.com"
+            required autocomplete="email">
+          <p class="form-error">Please enter a valid email address.</p>
+        </div>
+
+        <!-- 4. Year of Study -->
+        <div class="form-group">
+          <label for="select-year" class="form-label">
+            Year of study <span class="required-mark">*</span>
+          </label>
+          <select id="select-year" name="year" class="form-select" required>
+            <option value="" disabled selected>Select your year of study</option>
+            <option value="1">1st year</option>
+            <option value="2">2nd year</option>
+            <option value="3">3rd year</option>
+            <option value="4">4th year</option>
+          </select>
+          <p class="form-error">Please select your year of study.</p>
+        </div>
+
+        <!-- 5. IEEE Member Radio Chips -->
+        <div id="ieee-radio-group" class="form-group">
+          <label class="form-label">
+            Are you an IEEE member? <span class="required-mark">*</span>
+          </label>
+          <p class="form-hint" style="margin-bottom: 0.5rem;">IEEE members pay ₹899. Everyone else pays ₹1099.</p>
+          <div class="chip-group">
+            <div>
+              <input type="radio" id="ieee-yes" name="ieee" value="Yes" class="visually-hidden-radio" required>
+              <label for="ieee-yes" class="chip-label">
+                <i class="bi bi-patch-check-fill me-1"></i> Yes
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="ieee-no" name="ieee" value="No" class="visually-hidden-radio">
+              <label for="ieee-no" class="chip-label">
+                <i class="bi bi-x-circle me-1"></i> No
+              </label>
+            </div>
           </div>
+          <p class="form-error">Please specify if you are an IEEE member.</p>
 
-          <div class="registration-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="registration-progress" aria-label="Registration progress">
-              <div class="progress-step active" data-progress="1"><span>01</span>Your details</div>
-              <div class="progress-step" data-progress="2"><span>02</span>Choose events</div>
-              <div class="progress-step" data-progress="3"><span>03</span>Confirm</div>
+          <!-- Indented conditional box for IEEE members -->
+          <div id="ieee-conditional-box" class="indented-group disabled" aria-live="polite">
+            <div class="form-group" style="margin-bottom: 0.85rem;">
+              <label for="input-ieee-id" class="form-label">IEEE membership ID</label>
+              <input type="text" id="input-ieee-id" name="ieeeId" class="form-control" placeholder="e.g. 98765432"
+                disabled>
             </div>
 
-            <form id="registration-form">
-              <div class="form-step" data-step="1">
-                <h2>Tell us about you</h2>
-                <p>We’ll use these details to prepare your event pass.</p>
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <label for="full-name">Full name</label>
-                    <input class="form-control" id="full-name" name="fullName" type="text" autocomplete="name" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email">Email address</label>
-                    <input class="form-control" id="email" name="email" type="email" autocomplete="email" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="phone">Phone number</label>
-                    <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" minlength="7" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="college">College / organisation</label>
-                    <input class="form-control" id="college" name="college" type="text" required>
-                  </div>
-                </div>
-                <div class="form-actions justify-content-end">
-                  <button class="btn btn-primary" type="button" data-next>Continue <i class="bi bi-arrow-right"></i></button>
-                </div>
-              </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="input-alt-phone" class="form-label">If ID not yet received but paid? Provide phone
+                number</label>
+              <input type="tel" id="input-alt-phone" name="altPhone" class="form-control"
+                placeholder="10-digit registered phone" pattern="[6-9][0-9]{9}" inputmode="numeric" maxlength="10"
+                disabled>
+            </div>
 
-              <div class="form-step" data-step="2" hidden>
-                <h2>Shape your Exordium</h2>
-                <p>Select the experiences you want to be part of.</p>
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <label class="event-choice">
-                      <input name="events" type="checkbox" value="Main fest" required>
-                      <span><strong>Main fest pass</strong><small>Three days of talks, games and networking.</small></span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="event-choice">
-                      <input name="events" type="checkbox" value="Virtuverse">
-                      <span><strong>Virtuverse</strong><small>Hands-on VR and AR development workshop.</small></span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="event-choice">
-                      <input name="events" type="checkbox" value="Aeroverse">
-                      <span><strong>Aeroverse</strong><small>Explore machine learning and artificial intelligence.</small></span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="dietary">Dietary preference</label>
-                    <select class="form-select" id="dietary" name="dietary" required>
-                      <option value="">Select one</option>
-                      <option>None</option>
-                      <option>Vegetarian</option>
-                      <option>Vegan</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-actions">
-                  <button class="btn btn-outline" type="button" data-prev><i class="bi bi-arrow-left"></i> Back</button>
-                  <button class="btn btn-primary" type="button" data-next>Review registration <i class="bi bi-arrow-right"></i></button>
-                </div>
-              </div>
-
-              <div class="form-step" data-step="3" hidden>
-                <h2>Review your registration</h2>
-                <p>Check your details before sending your registration.</p>
-                <div class="registration-summary" id="registration-summary"></div>
-                <div class="form-actions">
-                  <button class="btn btn-outline" type="button" data-prev><i class="bi bi-arrow-left"></i> Back</button>
-                  <button class="btn btn-primary" type="submit">Complete registration <i class="bi bi-check2"></i></button>
-                </div>
-              </div>
-
-              <div class="registration-success" data-success hidden>
-                <i class="bi bi-check-circle-fill"></i>
-                <h2 class="mt-3">You’re registered!</h2>
-                <p>Thank you for signing up for Exordium 5.0. We’ll be in touch with the next steps.</p>
-              </div>
-            </form>
+            <p id="ieee-error-msg" class="form-error" style="margin-top: 0.75rem;">
+              Enter your IEEE ID, or your phone number if the ID has not arrived yet.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
+        <!-- Continue Button -->
+        <button type="button" id="btn-continue-payment" class="btn-primary-action" style="margin-top: 1.5rem;">
+          Continue to payment <i class="bi bi-arrow-right"></i>
+        </button>
 
-  <footer id="footer" class="footer position-relative dark-background">
-    <div class="container footer-top">
-        <div class="row gy-4 footer-flex-row">
+      </section>
 
-            <div class="col-12 col-lg-4 footer-map-col">
-                <div class="footer-content-wrapper" id="footer-map-content">
-                    <h4>Our Location</h4>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.8353384465277!2d76.93808124356644!3d8.505254033374444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbea98f774c5%3A0x86b28c4cdb1274e4!2sGovernment%20Engineering%20College%2C%20Barton%20Hill%2C%20Barton%20Hill%20Colony%2C%20Kunnukuzhy%2C%20Thiruvananthapuram%2C%20Kerala%20695035!5e1!3m2!1sen!2sin!4v1759263344901!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+      <!-- STEP 2: Preferences & Payment Card -->
+      <section id="step-2-card" class="form-card" style="opacity: 0.5; pointer-events: none;"
+        aria-labelledby="step-2-title">
+        <h2 id="step-2-title" class="card-title">2. Preferences & Payment</h2>
+        <p class="card-desc">Choose your workshop & food, then scan the departmental QR bill below.</p>
+
+        <!-- Food Preference -->
+        <div id="food-radio-group" class="form-group">
+          <label class="form-label">Food preference <span class="required-mark">*</span></label>
+          <div class="chip-group">
+            <div>
+              <input type="radio" id="food-veg" name="food" value="Veg" class="visually-hidden-radio" checked required>
+              <label for="food-veg" class="chip-label">🥗 Vegetarian</label>
+            </div>
+            <div>
+              <input type="radio" id="food-nonveg" name="food" value="Non-veg" class="visually-hidden-radio">
+              <label for="food-nonveg" class="chip-label">🍗 Non-vegetarian</label>
+            </div>
+          </div>
+          <p class="form-error">Please select your food preference.</p>
+        </div>
+
+        <!-- Workshop Preference -->
+        <div id="workshop-radio-group" class="form-group">
+          <label class="form-label">Workshop preference <span class="required-mark">*</span></label>
+          <div class="chip-group">
+            <div>
+              <input type="radio" id="workshop-game" name="workshop" value="Game development"
+                class="visually-hidden-radio" checked required>
+              <label for="workshop-game" class="chip-label">🎮 3D Game Development</label>
+            </div>
+            <div>
+              <input type="radio" id="workshop-robotics" name="workshop" value="Robotics" class="visually-hidden-radio">
+              <label for="workshop-robotics" class="chip-label">🤖 Robotics</label>
+            </div>
+          </div>
+          <p class="form-error">Please select your workshop preference.</p>
+        </div>
+
+        <!-- Department Selection -->
+        <div id="dept-radio-group" class="form-group">
+          <label class="form-label">Department <span class="required-mark">*</span></label>
+          <p class="form-hint" style="margin-bottom: 0.6rem;">This decides which departmental representative QR code you
+            pay to.</p>
+          <div class="dept-grid">
+            <div>
+              <input type="radio" id="dept-it" name="dept" value="IT" class="visually-hidden-radio" required>
+              <label for="dept-it" class="dept-label">
+                <span>Information Technology (IT)</span>
+                <span class="dept-code">IT</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="dept-ec" name="dept" value="EC" class="visually-hidden-radio">
+              <label for="dept-ec" class="dept-label">
+                <span>Electronics and Communication (EC)</span>
+                <span class="dept-code">EC</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="dept-eee" name="dept" value="EEE" class="visually-hidden-radio">
+              <label for="dept-eee" class="dept-label">
+                <span>Electrical and Electronics (EEE)</span>
+                <span class="dept-code">EEE</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="dept-me" name="dept" value="ME" class="visually-hidden-radio">
+              <label for="dept-me" class="dept-label">
+                <span>Mechanical (ME)</span>
+                <span class="dept-code">ME</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="dept-ce" name="dept" value="CE" class="visually-hidden-radio">
+              <label for="dept-ce" class="dept-label">
+                <span>Civil (CE)</span>
+                <span class="dept-code">CE</span>
+              </label>
+            </div>
+          </div>
+          <p class="form-error">Please choose your department.</p>
+        </div>
+
+        <!-- Pay with QR Subcard -->
+        <div class="pay-subcard"
+          style="margin-top: 2rem; border-top: 1px solid var(--border-line); padding-top: 1.5rem;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="card-title" style="margin-bottom: 0; font-size: 1.15rem;">
+              Pay with the QR code
+            </h3>
+            <!-- Speaker Sound Toggle -->
+            <button type="button" id="sound-toggle" class="sound-toggle-btn" aria-pressed="true"
+              title="Toggle printer sound">
+              <i class="bi bi-volume-up"></i>
+            </button>
+          </div>
+
+          <!-- Empty State Box (Before dept selected) -->
+          <div id="empty-bill-box" class="empty-bill-box">
+            <i class="bi bi-receipt" style="font-size: 2rem; display: block; margin-bottom: 0.5rem; opacity: 0.6;"></i>
+            Pick your department above and your bill will print here.
+          </div>
+
+          <!-- Thermal Receipt Printer Animation Container -->
+          <div id="printer-container" class="printer-container" aria-live="polite">
+
+            <!-- Metallic Machine Dispenser Top -->
+            <div class="printer-machine" aria-hidden="true">
+              <div class="printer-hood">
+                <div class="printer-hood-streak"></div>
+              </div>
+              <div class="printer-slot-slit">
+                <div id="cutter-flash" class="cutter-blade-flash"></div>
+              </div>
+              <div class="printer-lip"></div>
             </div>
 
-            <div class="col-12 col-lg-4 footer-social-col">
-                <div class="footer-content-wrapper" id="footer-social-content">
-                    <h4>Connect With Us</h4>
-                    <div class="social-links d-flex gap-3">
-                        <a href="mailto:gecbieee@gmail.com" target="_blank" class="social-link"><i class="bi bi-envelope-at"></i></a>
-                        <!-- <a href="#" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a> -->
-                        <a href="https://www.instagram.com/ieeegecbh?igsh=ZWJobTh0MmU5ZjZs" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/ieee-sb-gecbh/" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <!-- Viewport with 3D Perspective -->
+            <div class="receipt-viewport">
+              <div id="receipt-paper" class="receipt-paper retracted">
+                <div class="receipt-content">
+
+                  <!-- 1. Header -->
+                  <div class="receipt-header">
+                    <div>
+                      <div class="receipt-brand">EXORDIUM 5.0</div>
+                      <div id="receipt-subhead" class="receipt-subhead">REGISTRATION BILL</div>
                     </div>
+                    <div>
+                      <img src="assets/img/IEEE_LOGO_color.png" alt="IEEE" class="receipt-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                      <span class="receipt-logo-fallback" style="display: none;">IEEE</span>
+                    </div>
+                  </div>
+
+                  <!-- 2. Big Amount & Date -->
+                  <div class="receipt-amount-block">
+                    <div id="receipt-amount-val" class="receipt-amount-val">₹0</div>
+                    <div id="receipt-meta" class="receipt-meta">20 SEPTEMBER 2026 | AWAITING PAYMENT</div>
+                  </div>
+
+                  <!-- 3. Details Table -->
+                  <hr class="receipt-dashed">
+                  <div class="receipt-table">
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">NAME</span>
+                      <span id="receipt-row-name" class="receipt-row-val">—</span>
+                    </div>
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">DEPT</span>
+                      <span id="receipt-row-dept" class="receipt-row-val">—</span>
+                    </div>
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">YEAR</span>
+                      <span id="receipt-row-year" class="receipt-row-val">—</span>
+                    </div>
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">MEMBER</span>
+                      <span id="receipt-row-member" class="receipt-row-val">—</span>
+                    </div>
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">FOOD</span>
+                      <span id="receipt-row-food" class="receipt-row-val">Veg</span>
+                    </div>
+                    <div class="receipt-row">
+                      <span class="receipt-row-label">TRACK</span>
+                      <span id="receipt-row-workshop" class="receipt-row-val">Game dev</span>
+                    </div>
+                  </div>
+
+                  <!-- 4. QR Block -->
+                  <hr id="receipt-qr-divider" class="receipt-dashed">
+                  <div id="receipt-qr-block" class="receipt-qr-block">
+                    <div class="receipt-qr-frame">
+                      <img id="receipt-qr-img" class="receipt-qr-img" src="" alt="Payment QR Code">
+                      <div id="receipt-qr-missing" class="receipt-qr-missing" style="display:none;">QR Code Placeholder
+                      </div>
+                    </div>
+                    <div class="receipt-pay-to">Pay to: <span id="receipt-payee-name">—</span></div>
+                    <div id="receipt-upi-text" class="receipt-upi-text">UPI ID: —</div>
+                    <div class="receipt-scan-hint">Scan with any UPI app and pay the exact amount</div>
+                  </div>
+
+                  <!-- 5. Total & Barcode -->
+                  <hr class="receipt-dashed">
+                  <div class="receipt-total-row">
+                    <span>TOTAL AMOUNT</span>
+                    <span id="receipt-total-val">₹0</span>
+                  </div>
+
+                  <div id="receipt-footer-text" class="receipt-footer-text">SCAN, PAY, UPLOAD PROOF</div>
+                  <div class="receipt-barcode" aria-hidden="true"></div>
+                  <div class="receipt-barcode-caption">EXORDIUM 5.0</div>
+
+                  <!-- 6. PAID Stamp Overlay -->
+                  <div id="stamp-zone" class="stamp-zone">
+                    <span class="paid-stamp">PAID</span>
+                  </div>
+
                 </div>
+              </div>
             </div>
 
-            <div class="col-12 col-lg-4 footer-links-col">
-                <div class="footer-content-wrapper" id="footer-links-content">
-                    <h4>Useful Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.ieeegecbh.org" target="_blank">IEEE SB GECBH</a></li>
-                        <li><a href="https://ieeekerala.org/" target="_blank">IEEE Kerala Section</a></li>
-                        <li><a href="https://www.ieee.org/" target="_blank">IEEE org</a></li>
-                        <li><a href="https://www.ieeer10.org/" target="_blank">IEEE Region 10</a></li>
-                        <li><a href="https://www.ieee.org/membership/join" target="_blank">Join IEEE</a></li>
-                        <!-- <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#">Privacy Policy</a></li> -->
-                    </ul>
+          </div><!-- /printer-container -->
+
+          <!-- Payment Completion Action -->
+          <div style="margin-top: 1.5rem;">
+            <p id="paid-note-text" class="form-hint" style="margin-bottom: 0.75rem; text-align: center;">
+              Scan the QR code and pay the exact amount. Once done, tap below:
+            </p>
+            <button type="button" id="btn-mark-paid" class="btn-primary-action">
+              <i class="bi bi-check-circle-fill"></i> I have completed the payment
+            </button>
+            <button type="button" id="btn-show-qr-again" class="btn-outline-action" style="display: none;">
+              <i class="bi bi-qr-code"></i> Show the payment QR again
+            </button>
+          </div>
+
+          <!-- Section 3.6: Proof Upload Section (Revealed after payment marked) -->
+          <div id="proof-section" class="proof-section" aria-live="polite">
+            <hr style="border-color: var(--border-line); margin: 2rem 0 1.5rem;">
+            <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.35rem;">
+              Upload Payment Proof
+            </h3>
+            <p class="card-desc" style="margin-bottom: 1.25rem;">
+              Upload the screenshot of your successful UPI transaction.
+            </p>
+
+            <!-- Dropzone -->
+            <label id="screenshot-dropzone" class="file-dropzone" for="file-screenshot">
+              <div class="dropzone-icon">
+                <i class="bi bi-cloud-arrow-up-fill"></i>
+              </div>
+              <div class="dropzone-text">Choose the payment screenshot</div>
+              <div class="dropzone-hint">PNG or JPG. It must show the amount and the transaction ID.</div>
+              <input type="file" id="file-screenshot" accept="image/*" class="visually-hidden-radio" required>
+            </label>
+
+            <!-- Animated Upload Progress Card with Multi-Harmonic SVG Speed Wave Graph -->
+            <div id="upload-card" class="upload-card" role="region" aria-label="File Upload Status">
+
+              <!-- Local Confetti Burst Container -->
+              <div class="confetti-container" id="upload-confetti-container"></div>
+
+              <!-- Background Tint Fill for Progress Section -->
+              <div id="upload-card-fill" class="progress-fill-bg"></div>
+
+              <!-- Dynamic Speed Wave Graph at Bottom (SVG with Area Fill & Glow Stroke) -->
+              <div class="graph-container" id="upload-graph-container">
+                <svg class="speed-graph-svg" id="upload-speed-graph-svg" viewBox="0 0 520 36" preserveAspectRatio="none"
+                  aria-hidden="true">
+                  <defs>
+                    <linearGradient id="blueGraphGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#4da3ff" stop-opacity="0.38" />
+                      <stop offset="100%" stop-color="#4da3ff" stop-opacity="0.0" />
+                    </linearGradient>
+                    <linearGradient id="greenGraphGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#3ecf8e" stop-opacity="0.45" />
+                      <stop offset="100%" stop-color="#3ecf8e" stop-opacity="0.0" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Filled Area Under Wave Curve -->
+                  <path class="graph-area-fill" id="upload-graph-area-fill" fill="url(#blueGraphGradient)"
+                    d="M0,36 L520,36 Z" />
+                  <!-- Top Glowing Wave Stroke Line -->
+                  <path class="graph-line-stroke" id="upload-graph-line-stroke" fill="none" stroke="#4da3ff"
+                    stroke-width="2.2" stroke-linecap="round" d="M0,32 L520,32" />
+                </svg>
+              </div>
+
+              <!-- Card Content Inner Flex -->
+              <div class="card-content">
+                <div class="text-group">
+                  <div class="title-row">
+                    <span id="upload-filename" class="upload-filename">screenshot.jpg</span>
+                    <span class="complete-badge" id="upload-complete-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span>Done</span>
+                    </span>
+                  </div>
+                  <div class="status-row">
+                    <span id="upload-status-text" class="upload-status-text">Ready to upload</span>
+                  </div>
                 </div>
+
+                <!-- Action Button -->
+                <div class="action-buttons">
+                  <button type="button" id="btn-upload-action" class="action-btn toggle-btn"
+                    aria-label="Remove or cancel upload" title="Remove file">
+                    <!-- Cancel / Remove Icon (X) -->
+                    <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+
+                    <!-- Success Checkmark Icon -->
+                    <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
             </div>
 
-        </div>
-    </div>
-    
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Exordium 5.0</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="">Web Team IEEE SB GECBH</a>
+            <!-- Required Declaration Checkbox -->
+            <label class="declaration-group" for="declaration-check">
+              <input type="checkbox" id="declaration-check" class="declaration-checkbox" required>
+              <span class="declaration-text">
+                I hereby declare that all the information given above is true and correct to the best of my knowledge,
+                and that the payment screenshot I uploaded is genuine.
+              </span>
+            </label>
+
+            <!-- Error Line Alert -->
+            <div id="submit-error-alert" class="form-error" role="alert"
+              style="margin-bottom: 1rem; font-size: 0.9rem;">
+              Submission error.
+            </div>
+
+            <!-- Submit Registration Button -->
+            <button type="button" id="btn-submit-registration" class="btn-primary-action"
+              style="background: var(--color-success); color: #0e1726;">
+              <i class="bi bi-send-fill"></i> Submit registration
+            </button>
+
+          </div><!-- /proof-section -->
+
+        </div><!-- /pay-subcard -->
+
+      </section>
+
+    </form>
+
+  </div><!-- /register-container -->
+
+  <!-- Full-Screen Success Screen Dialog Overlay -->
+  <div id="success-overlay" class="success-overlay" role="dialog" aria-modal="true" aria-labelledby="success-title">
+    <div class="success-modal">
+
+      <!-- SVG Animated Checkmark -->
+      <svg class="success-checkmark-svg" viewBox="0 0 52 52" aria-hidden="true">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+      </svg>
+
+      <h2 id="success-title" class="success-title">You’re registered!</h2>
+
+      <div id="demo-mode-notice" class="demo-mode-notice" style="display: none;">
+        <i class="bi bi-info-circle"></i> Demo mode: nothing was saved
       </div>
+
+      <div>
+        <div id="success-reg-id" class="success-id-box">EXO5-0001</div>
+      </div>
+
+      <p id="success-msg" class="success-msg">
+        We’ll check your payment and confirm on your email. Keep this ID handy.
+      </p>
+
+      <button type="button" id="btn-success-home" class="btn-primary-action" style="max-width: 240px; margin: 0 auto;">
+        <i class="bi bi-house-door-fill"></i> Back to home
+      </button>
+
     </div>
-</footer>
+  </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Interactive Robot Mascot & Floating Contact JS -->
+  <script src="assets/js/robot.js"></script>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Registration Engine JS -->
+  <script src="assets/js/register.js"></script>
 
 </body>
 
 </html>
-
