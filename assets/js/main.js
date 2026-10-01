@@ -209,6 +209,70 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
   /**
+   * Show the registration-closed message without leaving the current page.
+   */
+  function showRegistrationClosedAlert(event) {
+    if (event) event.preventDefault();
+
+    const existingAlert = document.querySelector('#registration-closed-alert');
+    if (existingAlert) {
+      existingAlert.classList.add('is-visible');
+      existingAlert.querySelector('.registration-closed-dialog button')?.focus();
+      return;
+    }
+
+    const alertOverlay = document.createElement('div');
+    alertOverlay.id = 'registration-closed-alert';
+    alertOverlay.className = 'registration-closed-alert';
+    alertOverlay.setAttribute('role', 'presentation');
+    alertOverlay.innerHTML = `
+      <div class="registration-closed-dialog" role="alertdialog" aria-modal="true"
+        aria-labelledby="registration-closed-title" aria-describedby="registration-closed-message">
+        <button class="registration-closed-close" type="button" aria-label="Close message">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+        <div class="registration-closed-icon" aria-hidden="true">
+          <div class="registration-closed-robot"></div>
+        </div>
+        <p class="registration-closed-kicker">Exordium 5.0</p>
+        <h2 id="registration-closed-title">Registrations are closed</h2>
+        <p id="registration-closed-message">Sorry, registrations for Exordium 5.0 are now closed. Thank you for your interest!</p>
+        <button class="registration-closed-action" type="button">Understood</button>
+      </div>`;
+
+    const closeAlert = () => {
+      alertOverlay.classList.remove('is-visible');
+      setTimeout(() => alertOverlay.remove(), 220);
+    };
+
+    alertOverlay.addEventListener('click', (alertEvent) => {
+      if (alertEvent.target === alertOverlay) closeAlert();
+    });
+    alertOverlay.querySelectorAll('button').forEach((button) => {
+      button.addEventListener('click', closeAlert);
+    });
+    document.body.appendChild(alertOverlay);
+    const robotSource = document.querySelector('.hero-robot, .floating-robot-icon svg');
+    const alertRobot = alertOverlay.querySelector('.registration-closed-robot');
+    if (robotSource && alertRobot) {
+      alertRobot.appendChild(robotSource.cloneNode(true));
+    }
+    requestAnimationFrame(() => alertOverlay.classList.add('is-visible'));
+    alertOverlay.querySelector('.registration-closed-close').focus();
+    document.addEventListener('keydown', function closeOnEscape(keyEvent) {
+      if (keyEvent.key === 'Escape' && document.body.contains(alertOverlay)) {
+        closeAlert();
+        document.removeEventListener('keydown', closeOnEscape);
+      }
+    });
+  }
+
+  window.showRegistrationClosedAlert = showRegistrationClosedAlert;
+  document.querySelectorAll('a[data-registration-closed]').forEach((link) => {
+    link.addEventListener('click', showRegistrationClosedAlert);
+  });
+
+  /**
    * Registration form steps
    */
   const registrationForm = document.querySelector('#registration-form');

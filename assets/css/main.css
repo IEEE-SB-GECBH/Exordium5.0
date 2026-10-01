@@ -1034,6 +1034,180 @@ section,
   }
 }
 
+.registration-closed-alert {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(192, 132, 252, 0.22), transparent 48%),
+    rgba(12, 6, 24, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.registration-closed-alert.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.registration-closed-dialog {
+  position: relative;
+  width: min(100%, 30rem);
+  padding: 2.75rem 2rem 2rem;
+  overflow: hidden;
+  text-align: center;
+  color: #f5eedf;
+  background: #180c2c;
+  border: 1px solid #3f1c6e;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(168, 85, 247, 0.18);
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transform: translateY(1.5rem) scale(0.94);
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.registration-closed-dialog::before,
+.registration-closed-dialog::after {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  content: '';
+  border-radius: 50%;
+  background: rgba(192, 132, 252, 0.12);
+}
+
+.registration-closed-dialog::before {
+  top: -2.5rem;
+  left: -2rem;
+}
+
+.registration-closed-dialog::after {
+  right: -2rem;
+  bottom: -2.75rem;
+  background: rgba(233, 207, 159, 0.1);
+}
+
+.registration-closed-alert.is-visible .registration-closed-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.registration-closed-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  color: #bda3dc;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.registration-closed-close:hover,
+.registration-closed-close:focus-visible {
+  color: #f5eedf;
+  background: rgba(255, 255, 255, 0.08);
+  transform: rotate(90deg);
+}
+
+.registration-closed-icon {
+  position: relative;
+  display: grid;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1.1rem;
+  place-items: center;
+  background: linear-gradient(135deg, #c084fc, #e9cf9f);
+  border: 1px solid #d8b4fe;
+  border-radius: 14px;
+  box-shadow: 0 0.75rem 1.5rem rgba(192, 132, 252, 0.28);
+  animation: sad-robot-droop 2.4s ease-in-out infinite;
+}
+
+.registration-closed-robot {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.registration-closed-robot svg {
+  width: 4.9rem !important;
+  height: 5.5rem !important;
+  max-width: none;
+  filter: drop-shadow(0 0.45rem 0.5rem rgba(12, 6, 24, 0.45));
+  pointer-events: none;
+}
+
+.registration-closed-kicker {
+  margin: 0 0 0.45rem;
+  color: #c084fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.registration-closed-dialog h2 {
+  margin: 0 0 0.7rem;
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.registration-closed-dialog p:not(.registration-closed-kicker) {
+  max-width: 24rem;
+  margin: 0 auto 1.5rem;
+  color: #bda3dc;
+  line-height: 1.65;
+}
+
+.registration-closed-action {
+  position: relative;
+  z-index: 1;
+  padding: 0.72rem 1.4rem;
+  color: #fff;
+  font-weight: 700;
+  background: #c084fc;
+  border: 1px solid #c084fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(192, 132, 252, 0.35);
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.registration-closed-action:hover,
+.registration-closed-action:focus-visible {
+  color: #0c0618;
+  background: #d8b4fe;
+  transform: translateY(-2px);
+}
+
+@keyframes sad-robot-droop {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(4px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .registration-closed-alert,
+  .registration-closed-dialog,
+  .registration-closed-icon,
+  .registration-closed-close,
+  .registration-closed-action {
+    animation: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 992px) {
   .hero .hero-content {
     text-align: center;
